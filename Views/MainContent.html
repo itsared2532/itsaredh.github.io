@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <!-- <div class="p-3">
+    <h1 class="display-4">Hello, Welcome to my story!</h1>
+    <p class="lead">Tell stories about feelings, experiences, and positive things that have been found.</p>
+    <hr />
+  </div> -->
+
+  <!-- <div class="list-group mb-4">
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Phuket trip</h5>
+        <small>10 Dec 2020</small>
+      </div>
+      <small>Don Muang Airport to Phuket </small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Ronin Yakiniku Japanese Restaurant</h5>
+        <small class="text-muted">6 Dec 2020</small>
+      </div>
+      <small class="text-muted">Dinner with my girlfriend.</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Ordination work at Wat Yannawa</h5>
+        <small class="text-muted">3 Dec 2020</small>
+      </div>
+      <small class="text-muted">Wat Yannawa</small>
+    </a>  
+  </div> -->
+
+  <!-- <div class="row">
+    <div class="col-xl-3 col-lg-4 col-md-5 col-12">
+      <div id="CovidTag"></div>
+    </div>
+    <div class="col-xl-9 col-lg-8 col-md-7 col-12">
+      <div class="table-responsive mt-3" style="font-size: .9em;">
+        <table id="cvTable" class="dataTable table table-hover table-bordered table-striped">
+          <thead class="alert-dark">
+            <tr class="table-active text-center">
+              <th scope="col">จังหวัด</th>
+              <th scope="col">จำนวนผู้ติดเชื้อ(คน)</th>
+            </tr>
+          </thead>
+          <tbody id="item_data">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div> -->
+
+  
+  
+
+</div>
+
+<script>
+  $(function () {
+    $("#CovidTag").load("Views/CovidTag.html");
+  });
+
+  $(document).ready(function () {
+    init()
+
+    function init() {
+      var url = "https://covid19.th-stat.com/json/covid19v2/getSumCases.json";
+
+      //test commit comment
+      $.get(url, function (data) {
+        for (const [key, value] of Object.entries(data.Province)) {
+          document.getElementById("item_data").innerHTML += "<tr><td>" + key + "</td><td class='text-right'>" +
+            value + "</td></tr>";
+        }
+        /*DataTables instantiation.*/
+        $("#cvTable").DataTable({
+          "order": [
+            [1, "desc"]
+          ]
+        });
+      })
+    }
+
+
+
+  })
+</script>

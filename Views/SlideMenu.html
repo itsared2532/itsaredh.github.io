@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col-lg-2 col-5 h-100 collapse bg-light fade shadow" id="navbarToggleExternalContent"
+        style="z-index: 3;position:absolute; margin-top:-5px; transition: .5s;">
+        <ul class="nav nav-pills flex-column">
+
+            <li class="nav-item border-bottom text-center">
+                <img src="Images/profile_dev_v1.jpg" class="rounded-circle img-fluid img-thumbnail shadow mt-4 mb-4">
+            </li>
+            <li class="nav-item border-bottom">
+                <a class="nav-link side-menu" href="#"><i class="fa fa-wpforms  pr-2" aria-hidden="true"></i>Project</a>
+            </li>
+            <li class="nav-item border-bottom">
+                <a class="nav-link side-menu" href="#"><i class="fa fa-newspaper-o pr-2" aria-hidden="true"></i>News</a>
+            </li>
+            <li class="nav-item border-bottom">
+                <a class="nav-link side-menu" href="#"><i class="fa fa-id-card-o pr-2"
+                        aria-hidden="true"></i>Profile</a>
+            </li>
+            <li class="nav-item border-bottom">
+                <!-- <a class="nav-link side-menu" href="#"> <i class="fa fa-gamepad pr-2" aria-hidden="true"></i>Hobby</a> -->
+
+                <a class="nav-link side-menu dropdown-toggle " data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="true" aria-expanded="false"><i class="fa fa-gamepad pr-2"
+                        aria-hidden="true"></i>Gallery</a>
+
+                <div class="dropdown-menu-right w-100">
+                    <!-- <div class="dropdown-divider"></div> -->
+                    <a class="dropdown-item side-menu" href="#"><i class="fa fa-map-marker p-2"
+                            aria-hidden="true"></i>Travels</a>
+                    <a class="dropdown-item side-menu" href="#"><i class="fa fa-linode p-2"
+                            aria-hidden="true"></i>Gadgets</a>
+                    <a class="dropdown-item side-menu" href="#"><i class="fa fa-fire p-2"
+                            aria-hidden="true"></i>Foods</a>
+                </div>
+            </li>
+
+            <li>
+                <div class="absolute_slidemenu">
+
+                    <i class="fa fa-facebook-square text-primary" aria-hidden="true" data-toggle="popover" data-placement="top" title="Facebook"
+                    data-content="facebook.com/ItsaredHiruntreekoon"></i>
+                    <i class="fa fa-instagram text-danger" aria-hidden="true" data-toggle="popover" data-placement="top" title="Instagram"
+                    data-content="itsared.h"></i>
+                    <i class="fa fa-phone-square text-success" aria-hidden="true" data-toggle="popover" data-placement="top" title="Telephone"
+                    data-content="+6685-075-4536"></i>
+                    <i class="fa fa-youtube-play text-danger" aria-hidden="true" data-toggle="popover" data-placement="top" title="Youtube"
+                    data-content="9Brix TV"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-12 col-12 h-100 ">
+        <div class="overlay" id="myNav">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $("[data-toggle=popover]").popover();
+    
+    $('#myNav').on("click", function () {
+        if ($('#navbarToggleExternalContent').hasClass('show')) {
+
+            document.getElementById("myNav").style.width = "0%";
+            $("#navbarToggleExternalContent").removeClass("show");
+            $("#spanBtn").removeClass("fa fa-close");
+            $("#spanBtn").addClass("fa fa-bars");
+            $("[data-toggle=popover]").popover('hide');
+        }
+    });
+</script>

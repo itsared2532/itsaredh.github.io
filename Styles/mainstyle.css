@@ -1,0 +1,78 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  /* Set padding to keep content from hitting the edges */
+  .body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Override the default bootstrap behavior where horizontal description lists 
+ will truncate terms that are too long to fit in the left column 
+*/
+  .dl-horizontal dt {
+    white-space: normal;
+  }
+
+  /* Set width on the form input elements since they're 100% wide by default */
+  input,
+  select,
+  textarea {
+    max-width: 280px;
+  }
+
+  .sub-menu {
+    display: none;
+  }
+
+  .vertical-nav li,
+  .sub-menu li {
+    list-style: none;
+  }
+
+  .side-menu {
+    transition: .4s;
+    color: black;
+  }
+
+  .side-menu:hover {
+    transition: .4s;
+    background-color: #343a40;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .side-menu:active{
+    transition: .4s;
+    background-color: #343a40;
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: .5s;
+  }
+
+  div.absolute_slidemenu {
+    position: absolute;
+    width: 100%;
+    margin-left:-7%;
+    bottom: 10%;
+    font-size: 2rem;
+    text-align: center;
+    /* border: 3px solid #8AC007; */
+  } 
