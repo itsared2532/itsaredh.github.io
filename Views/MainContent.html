@@ -208,8 +208,17 @@
             <strong class="d-inline-block mb-2 pt-3 text-primary">PTT Station (Oil Price) </strong>
             <div class="dropdown-divider"></div>
 
-            <div class="btn-group dropright btn-group-sm w-100 ml-2">
+            <!-- <div class="btn-group dropright btn-group-sm w-100 ml-2">
                 <iframe width="100%" height="600px;" src="http://www1.pttor.com/oilprice-board.aspx" frameborder="0"></iframe>
+            </div> -->
+
+            <!-- <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item vh100" src="http://www1.pttor.com/oilprice-board.aspx" allowfullscreen></iframe>
+            </div> -->
+
+            <!-- 1:1 aspect ratio -->
+            <div class="embed-responsive embed-responsive-1by1" >
+              <iframe class="embed-responsive-item" src="http://www1.pttor.com/oilprice-board.aspx"></iframe>
             </div>
           </div>
 
@@ -290,30 +299,30 @@
     $("#CovidTag").load("Views/CovidTag.html");
   });
 
-  $(document).ready(function () {
-    init()
+  // $(document).ready(function () {
+  //   init()
 
-    function init() {
-      var url = "https://covid19.th-stat.com/json/covid19v2/getSumCases.json";
+  //   function init() {
+  //     var url = "https://covid19.th-stat.com/json/covid19v2/getSumCases.json";
 
-      //test commit comment
-      $.get(url, function (data) {
-        for (const [key, value] of Object.entries(data.Province)) {
-          document.getElementById("item_data").innerHTML += "<tr><td>" + key + "</td><td class='text-right'>" +
-            value + "</td></tr>";
-        }
-        /*DataTables instantiation.*/
-        $("#cvTable").DataTable({
-          "order": [
-            [1, "desc"]
-          ]
-        });
-      })
-    }
+  //     //test commit comment
+  //     $.get(url, function (data) {
+  //       for (const [key, value] of Object.entries(data.Province)) {
+  //         document.getElementById("item_data").innerHTML += "<tr><td>" + key + "</td><td class='text-right'>" +
+  //           value + "</td></tr>";
+  //       }
+  //       /*DataTables instantiation.*/
+  //       $("#cvTable").DataTable({
+  //         "order": [
+  //           [1, "desc"]
+  //         ]
+  //       });
+  //     })
+  //   }
 
 
 
-  })
+  // })
 
   
 </script>
