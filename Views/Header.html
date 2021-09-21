@@ -15,9 +15,12 @@
       document.getElementById("myNav").style.width = "0%";
       $("#spanBtn").removeClass("fa fa-close");
       $("#spanBtn").addClass("fa fa-bars");
+      $("#colProj").addClass("sticky-top bg-light");
     } else {
       $("#spanBtn").removeClass("fa fa-bars");
       $("#spanBtn").addClass("fa fa-close");
+      
+      $("#colProj").removeClass("sticky-top bg-light");
       document.getElementById("myNav").style.width = "100%";
     }
   });
